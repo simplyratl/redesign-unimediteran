@@ -5,6 +5,8 @@ import SidebarSupport from '@/components/shared/sidebar/sidebar-items/SidebarSup
 import SidebarCalendar from '@/components/shared/sidebar/sidebar-items/SidebarCalendar.vue'
 import SidebarApplications from '@/components/shared/sidebar/sidebar-items/SidebarApplications.vue'
 import SidebarEnroll from '@/components/shared/sidebar/sidebar-items/SidebarEnroll.vue'
+import SidebarNewNotifications from '@/components/shared/sidebar/sidebar-items/SidebarNewNotifications.vue'
+import Breadcrumb from '@/components/shared/Breadcrumb.vue'
 </script>
 
 <template>
@@ -17,10 +19,12 @@ import SidebarEnroll from '@/components/shared/sidebar/sidebar-items/SidebarEnro
       </Sidebar>
     </div>
     <div class="col-span-6 lg:mt-0 mt-8">
+      <Breadcrumb />
       <slot />
     </div>
     <div class="col-span-3 lg:mt-0 mt-8">
       <Sidebar>
+        <SidebarNewNotifications />
         <SidebarCalendar />
         <SidebarApplications />
       </Sidebar>

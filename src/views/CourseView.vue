@@ -3,7 +3,5 @@ import Breadcrumb from '@/components/shared/Breadcrumb.vue'
 </script>
 
 <template>
-  <main>
-    <Breadcrumb />
-  </main>
+  <main></main>
 </template>

@@ -12,7 +12,7 @@ const breadcrumb = ref<
   }[]
 >([])
 
-const updateBreadcrumb = (currRoute: RouteLocationNormalized) => {
+const updateBreadcrumb = (currRoute: RouteLocationNormalized | undefined) => {
   const route = currRoute || router.currentRoute.value
 
   let breadcrumbTemp = [
@@ -33,7 +33,7 @@ const updateBreadcrumb = (currRoute: RouteLocationNormalized) => {
 }
 
 onMounted(() => {
-  updateBreadcrumb()
+  updateBreadcrumb(undefined)
 })
 
 router.beforeEach((to, from) => {
@@ -43,7 +43,7 @@ router.beforeEach((to, from) => {
 </script>
 
 <template>
-  <div class="flex gap-2 items-center">
+  <div class="flex gap-2 items-center mb-4">
     <div v-for="item in breadcrumb" :key="item.name" class="flex gap-2">
       <RouterLink :to="`${item.url}`">{{ item.name }}</RouterLink>
       <span v-if="item !== breadcrumb[breadcrumb.length - 1]">/</span>

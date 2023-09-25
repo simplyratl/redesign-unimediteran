@@ -4,6 +4,7 @@ import SidebarCourses from '@/components/shared/sidebar/sidebar-items/SidebarCou
 import SidebarSupport from '@/components/shared/sidebar/sidebar-items/SidebarSupport.vue'
 import SidebarCalendar from '@/components/shared/sidebar/sidebar-items/SidebarCalendar.vue'
 import SidebarApplications from '@/components/shared/sidebar/sidebar-items/SidebarApplications.vue'
+import Breadcrumb from '@/components/shared/Breadcrumb.vue'
 </script>
 
 <template>
@@ -15,6 +16,7 @@ import SidebarApplications from '@/components/shared/sidebar/sidebar-items/Sideb
       </Sidebar>
     </div>
     <div class="col-span-6 lg:mt-0 mt-8">
+      <Breadcrumb />
       <slot />
     </div>
     <div class="col-span-3 lg:mt-0 mt-8">

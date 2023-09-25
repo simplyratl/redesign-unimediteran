@@ -36,29 +36,37 @@ const attributes = computed(() => [
 
 <template>
   <SidebarCard title="Kalendar">
-    <Calendar :attributes="attributes" borderless title-position="left" locale="sr-Latn"
-      ><template #day-popover="{ dayTitle, attributes, day, format, masks }">
-        <div class="text-gray-800">{{ dayTitle }}</div>
+    <div class="flex justify-center lg:block">
+      <Calendar :attributes="attributes" borderless title-position="left" locale="sr-Latn"
+        ><template #day-popover="{ dayTitle, attributes, day, format, masks }">
+          <div class="text-gray-800">{{ dayTitle }}</div>
 
-        <ul>
-          <li v-for="{ key, customData } in attributes" :key="key" class="block text-sm px-2">
-            {{ customData.description }}
-            <div class="text-gray-400 text-xs">
-              {{ format(day.date, masks.dayPopover) }}
-            </div>
-          </li>
-        </ul>
-      </template></Calendar
-    >
+          <ul>
+            <li v-for="{ key, customData } in attributes" :key="key" class="block text-sm px-2">
+              {{ customData.description }}
+              <div class="text-gray-400 text-xs">
+                {{ format(day.date, masks.dayPopover) }}
+              </div>
+            </li>
+          </ul>
+        </template></Calendar
+      >
+    </div>
   </SidebarCard>
 </template>
 
 <style>
 .vc-title {
-  font-size: 16px !important;
+  /* font-size: 16px !important; */
+}
+
+.vc-container {
+  width: 100%;
+  max-width: 280px;
 }
 
 .vc-pane {
+  width: 100%;
   min-width: 100%;
 }
 </style>
